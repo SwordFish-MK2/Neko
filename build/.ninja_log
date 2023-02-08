@@ -1,0 +1,20 @@
+# ninja log v5
+8	40	1675854283544418775	build.ninja	e15eef041df20e26
+1	8	1675854283521084625	/home/Goku/cpp/neko/build/CMakeFiles/cmake.verify_globs	ec69a6b73425c56a
+10	218	1675850975791801923	Neko/CMakeFiles/Neko.dir/src/test.cpp.o	c2a451244fe7bc2d
+30	94	1675852703687833335	Neko/libNeko.so	5a47fd276d707fda
+9	28	1675851243077539378	Sandbox/CMakeFiles/Sandbox.dir/src/Application.cpp.o	1885b9929aacfd97
+192	252	1675852895034260352	Sandbox/Sandbox	ac9bc0b611a2f035
+8	192	1675852894974261488	Sandbox/CMakeFiles/Sandbox.dir/src/Sandbox.cpp.o	e76a647818d0304c
+9	30	1675852703621167894	Neko/CMakeFiles/Neko.dir/src/Application.cpp.o	eeba65ce1cf1d884
+8	39	1675854283544418775	build.ninja	e15eef041df20e26
+0	9	0	/home/Goku/cpp/neko/build/CMakeFiles/cmake.verify_globs	ec69a6b73425c56a
+10	572	1675854284121105634	Neko/CMakeFiles/Neko.dir/src/Log.cpp.o	fd39f3424ffe886d
+10	614	1675854284161107033	Sandbox/CMakeFiles/Sandbox.dir/src/Sandbox.cpp.o	e76a647818d0304c
+573	804	1675854284351113677	Neko/libNeko.so	2cb2d16a16ec06ad
+804	887	1675854284437783374	Sandbox/Sandbox	ac9bc0b611a2f035
+1	8	0	/home/Goku/cpp/neko/build/CMakeFiles/cmake.verify_globs	ec69a6b73425c56a
+9	542	1675854516381121743	Neko/CMakeFiles/Neko.dir/src/Log.cpp.o	fd39f3424ffe886d
+9	566	1675854516404455623	Sandbox/CMakeFiles/Sandbox.dir/src/Sandbox.cpp.o	e76a647818d0304c
+542	755	1675854516594460073	Neko/libNeko.so	2cb2d16a16ec06ad
+755	833	1675854516671128535	Sandbox/Sandbox	ac9bc0b611a2f035

@@ -1,0 +1,2 @@
+
+#include<Neko/EntryPoint.h>
