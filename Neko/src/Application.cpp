@@ -1,10 +1,18 @@
 #include <Neko/Application.h>
+#include <memory>
 
 namespace Neko {
-Application::Application() {}
+Application::Application() {
+
+    m_Window=std::unique_ptr<Window>(Window::Create());
+}
 
 Application::~Application() {}
 
-void Application::Run() {}
+void Application::Run() {
+    while(m_Running){
+        m_Window->OnUpdate();
+    }
+}
 
 }  // namespace Neko
