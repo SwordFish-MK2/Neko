@@ -8,8 +8,14 @@ find_package(glfw3 CONFIG REQUIRED)
 
 find_package(spdlog CONFIG REQUIRED)
 
-add_definitions(-DNEKO_BUILD_DLL)
-add_definitions(-DNEKO_PLATFORM_LINUX)
 
+# systems
+if(CMAKE_HOST_SYSTEM_NAME MATCHES "Linux")
+add_definitions(-DNEKO_PLATFORM_LINUX)
+elseif(CMAKE_HOST_SYSTEM_NAME MATCHES "Windows")
+add_definitions(-DNEKO_pLATFORM_WINDOWS)
+else()
+    message("Unsupported system")
+endif()
 add_subdirectory(Neko)
 add_subdirectory(Sandbox)
