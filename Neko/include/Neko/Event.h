@@ -3,6 +3,7 @@
 #include <Neko/Core.h>
 
 #include <functional>
+#include <iostream>
 #include <string>
 
 namespace Neko {
@@ -78,4 +79,8 @@ class EventDispatcher {
   private:
   Event &m_event;
 };
+
+inline std::ostream &operator<<(std::ostream &os, const Event &e) {
+  return os << e.ToString();
+}
 }  // namespace Neko

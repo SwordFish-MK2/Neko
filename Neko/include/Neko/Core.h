@@ -1,5 +1,7 @@
 #pragma once
 
+#include<debugbreak.h>
+
 #ifdef NEKO_PLATFORM_WINDOWS
     #ifdef DLL_EXPORT
         #define NEKO_API _declspec(dllexport)
@@ -11,8 +13,8 @@
 #endif
 
 #ifdef NK_ENABLE_ASSERTS
-    #define NK_ASSERT(x,...){if(!(x)){NK_ERROR("Assertion Failed: {0}",__VA_ARGS__);EMBED_BREAKPOINT;}}
-    #define NK_CORE_ASSERT(x,...){if(!(x)){NK_CORE_ERROR("Assertion Failed: {0}",__VA_ARGS__);EMBED_BREAKPOINT;}}
+    #define NK_ASSERT(x,...){if(!(x)){NK_ERROR("Assertion Failed: {0}",__VA_ARGS__);debugbreak();}}
+    #define NK_CORE_ASSERT(x,...){if(!(x)){NK_CORE_ERROR("Assertion Failed: {0}",__VA_ARGS__);debugbreak();}}
 #else
     #define NK_ASSERT(x,...) 
     #define NK_CORE_ASSERT(x,...)  

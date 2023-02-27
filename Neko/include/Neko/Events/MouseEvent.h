@@ -6,7 +6,7 @@
 #include <sstream>
 
 namespace Neko {
-class MouseMovedEvent : public Event {
+class MouseMovedEvent final : public Event {
   public:
   // functions
   MouseMovedEvent(float x, float y) : m_MouseX(x), m_MouseY(y) {}
@@ -25,7 +25,7 @@ class MouseMovedEvent : public Event {
   float m_MouseX, m_MouseY;
 };
 
-class MouseScrolledEvent : public Event {
+class MouseScrolledEvent final : public Event {
   public:
   MouseScrolledEvent(float x, float y) : m_XOffset(x), m_YOffset(y) {}
 
@@ -45,8 +45,8 @@ class MouseScrolledEvent : public Event {
 // Mouse button virtual class
 class MouseButtonEvent : public Event {
   public:
-  EVENT_CLASS_CATEGORY(
-      EventCategoryMouse | EventCategoryMouseButton | EventCategoryInput)
+  EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryMouseButton |
+                       EventCategoryInput)
   protected:
   MouseButtonEvent(int button) : m_Button(button) {}
 
@@ -55,29 +55,29 @@ class MouseButtonEvent : public Event {
   int m_Button;
 };
 
-class MouseButtonPressedEvent:public MouseButtonEvent{
-    public:
-    MouseButtonPressedEvent(int button):MouseButtonEvent(button){}
+class MouseButtonPressedEvent final : public MouseButtonEvent {
+  public:
+  MouseButtonPressedEvent(int button) : MouseButtonEvent(button) {}
 
-    std::string ToString()const override{
-        std::stringstream ss;
-        ss<<"MouseButtonPressedEvent "<<m_Button;
-        return ss.str();
-    }
-    EVENT_CLASS_TYPE(MouseButtonPressed)
+  std::string ToString() const override {
+    std::stringstream ss;
+    ss << "MouseButtonPressedEvent " << m_Button;
+    return ss.str();
+  }
+  EVENT_CLASS_TYPE(MouseButtonPressed)
 };
 
-class MouseButtonReleasedEvent:public MouseButtonEvent{
-    public:
-    MouseButtonReleasedEvent(int button):MouseButtonEvent(button){}
+class MouseButtonReleasedEvent final : public MouseButtonEvent {
+  public:
+  MouseButtonReleasedEvent(int button) : MouseButtonEvent(button) {}
 
-    std::string ToString()const override{
-        std::stringstream ss;
-        ss<<"MouseButtonReleasedEvent "<<m_Button;
-        return ss.str();
-    }
+  std::string ToString() const override {
+    std::stringstream ss;
+    ss << "MouseButtonReleasedEvent " << m_Button;
+    return ss.str();
+  }
 
-    EVENT_CLASS_TYPE(MouseButtonReleased)
+  EVENT_CLASS_TYPE(MouseButtonReleased)
 };
 
 }  // namespace Neko

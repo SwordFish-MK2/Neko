@@ -5,7 +5,7 @@
 #include <sstream>
 
 namespace Neko {
-class WindowResizeEvent : public Event {
+class WindowResizeEvent final : public Event {
   public:
   WindowResizeEvent(unsigned int width, unsigned int height)
       : m_Width(width), m_Height(height) {}
@@ -22,36 +22,36 @@ class WindowResizeEvent : public Event {
   unsigned int m_Width, m_Height;
 };
 
-class WindowCloseEvent : public Event {
+class WindowCloseEvent final : public Event {
+  public:
   WindowCloseEvent() = default;
 
   EVENT_CLASS_TYPE(WindowClose)
   EVENT_CLASS_CATEGORY(EventCategoryApplication)
-
 };
 
-class AppTickEvent:public Event{
+class AppTickEvent final : public Event {
   public:
-  AppTickEvent()=default;
+  AppTickEvent() = default;
 
   EVENT_CLASS_TYPE(AppTick)
-  EVENT_CLASS_CATEGORY(EventCategoryApplication)  
+  EVENT_CLASS_CATEGORY(EventCategoryApplication)
 };
 
-class AppRenderEvent:public Event{
+class AppRenderEvent final : public Event {
   public:
-  AppRenderEvent()=default;
+  AppRenderEvent() = default;
 
   EVENT_CLASS_TYPE(AppRender)
-  EVENT_CLASS_CATEGORY(EventCategoryApplication)  
+  EVENT_CLASS_CATEGORY(EventCategoryApplication)
 };
 
-class AppUpdateEvent:public Event{
+class AppUpdateEvent final : public Event {
   public:
-  AppUpdateEvent()=default;
+  AppUpdateEvent() = default;
 
   EVENT_CLASS_TYPE(AppUpdate)
-  EVENT_CLASS_CATEGORY(EventCategoryApplication)  
+  EVENT_CLASS_CATEGORY(EventCategoryApplication)
 };
 
 }  // namespace Neko
